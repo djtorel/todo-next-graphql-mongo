@@ -1,0 +1,8 @@
+{
+  "name": "Express-GraphQL-MongoDB-Demo-BE",
+  "version": "0.0.1",
+  "description": "Demo Back end using Express, Apollo GraphQL, and MongoDB",
+  "main": "index.js",
+  "author": "Dominic Torruellas",
+  "license": "MIT"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Nextjs-GraphQL-Todo-Demo-FE",
+  "version": "0.0.1",
+  "description": "Demo Front end for using NextJS, Apollo GraphQL, and TailwindCSS on front end",
+  "main": "index.js",
+  "author": "Dominic Torruellas",
+  "license": "MIT"
+}
