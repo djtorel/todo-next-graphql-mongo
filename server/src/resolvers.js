@@ -17,7 +17,6 @@ export const resolvers = {
           ? { text }
           : { text, completed, completedAt };
 
-      console.log(updatedInfo);
       return await Todo.findOneAndUpdate(
         { _id: id },
         { $set: updatedInfo },
