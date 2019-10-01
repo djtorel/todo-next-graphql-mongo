@@ -23,4 +23,16 @@ The goal is to do the leg work so if/when we use this stack for an application w
 
 ___
 
+## Start dev environments
+
+### Client
+
+`yarn dev:client`
+
+### Server
+
+`yarn dev:server`
+
+___
+
 ## TODO Add more notes about app here
