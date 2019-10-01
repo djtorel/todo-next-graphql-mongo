@@ -1,8 +1,24 @@
 {
-  "name": "Express-GraphQL-MongoDB-Demo-BE",
+  "name": "express-graphql-mongodb-demo-be",
   "version": "0.0.1",
   "description": "Demo Back end using Express, Apollo GraphQL, and MongoDB",
   "main": "index.js",
   "author": "Dominic Torruellas",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.9.4",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "mongoose": "^5.7.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "nodemon": "^1.19.3"
+  }
 }
