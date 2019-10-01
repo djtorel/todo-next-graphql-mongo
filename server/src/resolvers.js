@@ -10,20 +10,19 @@ export const resolvers = {
     createTodo: async (_, { text }) => await new Todo({ text }).save(),
     updateTodo: async (_, { id, text, completed }) => {
       const completedAt = completed ? new Date().getTime() : null;
-      if (!text) {
-        await Todo.findOneAndUpdate(
-          { _id: id },
-          { $set: { completed, completedAt } }
-        );
-      } else if (!completed) {
-        await Todo.findOneAndUpdate({ _id: id }, { $set: { text } });
-      } else {
-        await Todo.findOneAndUpdate(
-          { _id: id },
-          { $set: { text, completed, completedAt } }
-        );
-      }
-      return await Todo.findOne({ _id: id });
+      const updatedInfo =
+        text === undefined
+          ? { completed, completedAt }
+          : completed === undefined
+          ? { text }
+          : { text, completed, completedAt };
+
+      console.log(updatedInfo);
+      return await Todo.findOneAndUpdate(
+        { _id: id },
+        { $set: updatedInfo },
+        { returnOriginal: false }
+      );
     },
   },
 

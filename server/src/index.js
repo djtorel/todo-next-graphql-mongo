@@ -7,6 +7,8 @@ import { resolvers } from './resolvers';
 
 const app = express();
 
+mongoose.set('useFindAndModify', false);
+
 const startServer = async () => {
   const server = new ApolloServer({ typeDefs, resolvers });
 
