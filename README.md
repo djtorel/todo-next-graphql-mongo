@@ -1,16 +1,19 @@
 # Full stack using NextJS, Apollo GraphQL, Express, and MongoDB
 
+Planning to set up a simple Todo app using this stack in a monorepo as an example using these technologies.
+The goal is to do the leg work so if/when we use this stack for an application we can use this repo as a basis to get started.
+
 ## How to Install
 
 ### Everything
 
 `yarn installAll`
 
-### Front End
+### Front End only
 
 `yarn installClient`
 
-### Back End
+### Back End only
 
 `yarn installServer`
 
