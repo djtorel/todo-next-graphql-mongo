@@ -6,6 +6,9 @@
   "repository": "git@github.com:djtorel/todo-next-graphql-mongo.git",
   "author": "Dominic Torruellas <dom@domtorr.com>",
   "license": "MIT",
+  "scripts": {
+    "dev:fe": "yarn --cwd ./client dev"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.0",
