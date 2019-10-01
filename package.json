@@ -7,6 +7,10 @@
   "author": "Dominic Torruellas <dom@domtorr.com>",
   "license": "MIT",
   "scripts": {
+    "installRoot": "yarn install",
+    "installClient": "yarn --cwd ./client install",
+    "installServer": "yarn --cwd ./server install",
+    "installAll": "yarn installRoot & yarn installClient && yarn installServer",
     "dev:fe": "yarn --cwd ./client dev"
   },
   "devDependencies": {
