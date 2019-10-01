@@ -8,6 +8,7 @@ export const typeDefs = gql`
   type Mutation {
     createTodo(text: String!): Todo!
     updateTodo(id: ID!, text: String, completed: Boolean): Todo!
+    deleteTodo(id: ID!): Status!
   }
 
   scalar Date
@@ -17,5 +18,9 @@ export const typeDefs = gql`
     text: String!
     completed: Boolean!
     completedAt: Date
+  }
+
+  type Status {
+    message: String!
   }
 `;

@@ -23,6 +23,11 @@ export const resolvers = {
         { returnOriginal: false }
       );
     },
+    deleteTodo: async (_, { id }) => {
+      return await Todo.deleteOne({ _id: id }).then(({ deletedCount }) =>
+        deletedCount > 0 ? { message: 'Success' } : { message: 'Not found' }
+      );
+    },
   },
 
   Date: new GraphQLScalarType({
