@@ -9,7 +9,6 @@ export const typeDefs = gql`
     createTodo(text: String!): Todo!
     setTodoCompleted(id: ID!, completed: Boolean!): Todo!
     setTodoText(id: ID!, text: String!): Todo!
-    updateTodo(id: ID!, text: String, completed: Boolean): Todo!
     deleteTodo(id: ID!): Status!
   }
 
