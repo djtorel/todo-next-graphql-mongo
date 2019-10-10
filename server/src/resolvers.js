@@ -1,6 +1,15 @@
 import Todo from '../models/todo';
 import { GraphQLScalarType, Kind } from 'graphql';
 
+const updateTodo = async (id, changes) =>
+  await Todo.findOneAndUpdate(
+    { _id: id },
+    {
+      $set: changes,
+    },
+    { returnOriginal: false }
+  );
+
 export const resolvers = {
   Query: {
     todos: () => Todo.find(),
@@ -8,26 +17,19 @@ export const resolvers = {
 
   Mutation: {
     createTodo: async (_, { text }) => await new Todo({ text }).save(),
-    updateTodo: async (_, { id, text, completed }) => {
-      const completedAt = completed ? new Date().getTime() : null;
-      const updatedInfo =
-        text === undefined
-          ? { completed, completedAt }
-          : completed === undefined
-          ? { text }
-          : { text, completed, completedAt };
-
-      return await Todo.findOneAndUpdate(
-        { _id: id },
-        { $set: updatedInfo },
-        { returnOriginal: false }
-      );
-    },
-    deleteTodo: async (_, { id }) => {
-      return await Todo.deleteOne({ _id: id }).then(({ deletedCount }) =>
+    setTodoCompleted: async (_, { id, completed }) =>
+      updateTodo(id, {
+        completed,
+        completedAt: completed ? new Date().getTime() : null,
+      }),
+    setTodoText: async (_, { id, text }) =>
+      updateTodo(id, {
+        text,
+      }),
+    deleteTodo: async (_, { id }) =>
+      await Todo.deleteOne({ _id: id }).then(({ deletedCount }) =>
         deletedCount > 0 ? { message: 'Success' } : { message: 'Not found' }
-      );
-    },
+      ),
   },
 
   Date: new GraphQLScalarType({
