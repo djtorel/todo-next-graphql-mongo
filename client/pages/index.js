@@ -1,10 +1,9 @@
 import '../styles/index.css';
-
-import Hello from '../components/Hello';
+import TodoCard from '../components/Todo/TodoCard';
 
 const Home = () => (
   <div>
-    <Hello></Hello>
+    <TodoCard />
   </div>
 );
 
