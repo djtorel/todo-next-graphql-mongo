@@ -9,7 +9,7 @@
     "dev": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
-    "apollo-server-express": "^2.9.4",
+    "apollo-server-express": "^2.14.2",
     "express": "^4.17.1",
     "graphql": "^14.5.8",
     "mongoose": "^5.7.3"
